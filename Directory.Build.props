@@ -1,0 +1,12 @@
+<Project>
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net8.0;net481</TargetFrameworks>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <Company>Pandora Solution</Company>
+    <Product>Pandora Common Library</Product>
+    <Copyright>Copyright ©Pandora Solution 2025</Copyright>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyFileVersion>1.0.0.0</AssemblyFileVersion>
+  </PropertyGroup>
+</Project>
