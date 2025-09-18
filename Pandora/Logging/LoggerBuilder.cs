@@ -6,11 +6,25 @@ namespace Pandora.Logging
     {
         private readonly CompositionLoggerImpl _composition;
 
-        private readonly LogLevel _level = LogLevel.Debug;
+        private ILogTimeFormatter _timeFormatter = new DefaultLogTimeFormatter();
+
+        private LogLevel _logLevel = LogLevel.Debug;
 
         public LoggerBuilder()
         {
             _composition = new CompositionLoggerImpl();
+        }
+
+        public LoggerBuilder SetLogLevel(LogLevel logLevel)
+        {
+            _logLevel = logLevel;
+            return this;
+        }
+
+        public LoggerBuilder InstallTimeFormatter(ILogTimeFormatter timeFormatter)
+        { 
+            _timeFormatter = timeFormatter;
+            return this;
         }
 
         public LoggerBuilder InstallConsoleLogger()
@@ -35,12 +49,12 @@ namespace Pandora.Logging
 
         public ILogger Build()
         {
-            return new DynamicLogger(_composition, _level);
+            return new DynamicLogger(_composition, _timeFormatter, _logLevel);
         }
 
         public void BuildGlobal()
         {
-            Logger.GlobalLogger = new DynamicLogger(_composition, _level);
+            Logger.GlobalLogger = new DynamicLogger(_composition, _timeFormatter, _logLevel);
         }
     }
 }

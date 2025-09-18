@@ -9,12 +9,17 @@ namespace Pandora.Logging
     {
         private readonly ILoggerImpl _loggerImpl;
 
+        private readonly ILogTimeFormatter _timeFormatter;
+
         private readonly LogLevel _logLevel;
 
-        public DynamicLogger(ILoggerImpl loggerImpl, LogLevel logLevel)
+        public DynamicLogger(ILoggerImpl loggerImpl, ILogTimeFormatter timeFormatter, LogLevel logLevel)
         { 
             Ensure.ArgumentIsNotNull(loggerImpl, nameof(loggerImpl));
+            Ensure.ArgumentIsNotNull(timeFormatter, nameof(timeFormatter));
+
             _loggerImpl = loggerImpl;
+            _timeFormatter = timeFormatter;
             _logLevel = logLevel;
         }
 
@@ -31,7 +36,7 @@ namespace Pandora.Logging
         {
             if (LogLevel >= LogLevel.Debug)
             {
-                _loggerImpl.WriteDebug(message);
+                _loggerImpl.Write(GetFullMessage(message));
             }
         }
 
@@ -44,7 +49,7 @@ namespace Pandora.Logging
         {
             if (LogLevel >= LogLevel.Debug)
             {
-                _loggerImpl.WriteDebug(string.Format(format, args));
+                _loggerImpl.Write(GetFullMessage(string.Format(format, args)));
             }
         }
 
@@ -57,7 +62,7 @@ namespace Pandora.Logging
         {
             if (LogLevel >= LogLevel.Trace)
             {
-                _loggerImpl.WriteInfo(message);
+                _loggerImpl.Write(GetFullMessage(message));
             }
         }
 
@@ -70,7 +75,7 @@ namespace Pandora.Logging
         {
             if (LogLevel >= LogLevel.Trace)
             {
-                _loggerImpl.WriteInfo(string.Format(format, args));
+                _loggerImpl.Write(GetFullMessage(string.Format(format, args)));
             }
         }
 
@@ -83,7 +88,7 @@ namespace Pandora.Logging
         {
             if (LogLevel >= LogLevel.Info)
             {
-                _loggerImpl.WriteInfo(message);
+                _loggerImpl.Write(GetFullMessage(message));
             }
         }
 
@@ -96,7 +101,7 @@ namespace Pandora.Logging
         {
             if (LogLevel >= LogLevel.Info)
             {
-                _loggerImpl.WriteInfo(string.Format(format, args));
+                _loggerImpl.Write(GetFullMessage(string.Format(format, args)));
             }
         }
 
@@ -109,7 +114,7 @@ namespace Pandora.Logging
         {
             if (LogLevel >= LogLevel.Error)
             {
-                _loggerImpl.WriteError(message);
+                _loggerImpl.Write(GetFullMessage(message));
             }
         }
 
@@ -122,8 +127,13 @@ namespace Pandora.Logging
         {
             if (LogLevel >= LogLevel.Error)
             {
-                _loggerImpl.WriteError(string.Format(format, args));
+                _loggerImpl.Write(GetFullMessage(string.Format(format, args)));
             }
+        }
+
+        private string GetFullMessage(string message)
+        {
+            return $"{_timeFormatter.FormatTime(LogLevel)}{message}";
         }
     }
 }

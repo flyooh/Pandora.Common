@@ -20,24 +20,9 @@ namespace Pandora.Logging
             }
         }
 
-        public void WriteDebug(string line)
+        public void Write(string line)
         {
-            Parallel.ForEach(this.loggers, (writer) => writer.WriteDebug(line));
-        }
-
-        public void WriteTrace(string line)
-        {
-            Parallel.ForEach(this.loggers, (writer) => writer.WriteTrace(line));
-        }
-
-        public void WriteError(string line)
-        {
-            Parallel.ForEach(this.loggers, (writer) => writer.WriteError(line));
-        }
-
-        public void WriteInfo(string line)
-        {
-            Parallel.ForEach(this.loggers, (writer) => writer.WriteInfo(line));
+            Parallel.ForEach(this.loggers, (writer) => writer.Write(line));
         }
     }
 }
