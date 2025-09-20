@@ -1,6 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <PackageTags>Pandora</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="$(IntermediateOutputPath)\net481\ref\*.dll" Pack="true" PackagePath="ref\net481" />
+    <None Include="$(IntermediateOutputPath)\net6.0\ref\*.dll" Pack="true" PackagePath="ref\net6.0" />
+    <None Include="$(IntermediateOutputPath)\net8.0\ref\*.dll" Pack="true" PackagePath="ref\net8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+  
 </Project>
