@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Pandora\Pandora.csproj" />
+    <ProjectReference Include="..\Pandora\Pandora.Common.csproj" />
   </ItemGroup>
 
 </Project>

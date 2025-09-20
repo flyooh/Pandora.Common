@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pandora", "Pandora\Pandora.csproj", "{5CC9DE11-7782-8180-A8A8-4414B887F0F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pandora.Common", "Pandora\Pandora.Common.csproj", "{5CC9DE11-7782-8180-A8A8-4414B887F0F9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{52D8AC6C-72F4-407F-8A93-CF67F6284956}"
 EndProject

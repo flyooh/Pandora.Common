@@ -4,20 +4,20 @@
     {
         LogLevel LogLevel { get; }
 
-        void LogDebug(string message);
+        ILogger LogDebug(string message);
 
-        void LogDebugFormat(string format, params object[] args);
+        ILogger LogDebugFormat(string format, params object[] args);
 
-        void LogTrace(string message);
+        ILogger LogTrace(string message);
 
-        void LogTraceFormat(string format, params object[] args);
+        ILogger LogTraceFormat(string format, params object[] args);
 
-        void LogInfo(string message);
+        ILogger LogInfo(string message);
 
-        void LogInfoFormat(string format, params object[] args);
+        ILogger LogInfoFormat(string format, params object[] args);
 
-        void LogError(string message);
+        ILogger LogError(string message);
 
-        void LogErrorFormat(string format, params object[] args);
+        ILogger LogErrorFormat(string format, params object[] args);
     }
 }

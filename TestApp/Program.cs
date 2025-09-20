@@ -16,9 +16,9 @@ namespace TestApp
 
             RetryExecutor.TryUntilSuccessOrMaxAttempts(10, TimeSpan.FromSeconds(1), () =>
             {
-                Logger.LogDebug("Hello, World!");
-                Logger.LogInfo("This is a flower");
-                Logger.LogErrorFormat("It is not right time. {0}", DateTime.Now);
+                Logger.LogDebug("Hello, World!")
+                      .LogInfo("This is a flower")
+                      .LogErrorFormat("It is not right time. {0}", DateTime.Now);
                 return false;
             });
         }

@@ -11,9 +11,9 @@
         /// Logs debug message.
         /// </summary>
         /// <param name="message">The format.</param>
-        public static void LogDebug(string message)
+        public static ILogger LogDebug(string message)
         {
-            GlobalLogger?.LogDebug(message);
+            return GlobalLogger?.LogDebug(message);
         }
 
         /// <summary>
@@ -21,9 +21,9 @@
         /// </summary>
         /// <param name="format">The format.</param>
         /// <param name="args">The args.</param>
-        public static void LogDebugFormat(string format, params object[] args)
+        public static ILogger LogDebugFormat(string format, params object[] args)
         {
-            GlobalLogger.LogDebugFormat(format, args);
+            return GlobalLogger.LogDebugFormat(format, args);
         }
 
         /// <summary>
@@ -31,9 +31,9 @@
         /// </summary>
         /// <param name="format">The format.</param>
         /// <param name="args">The args.</param>
-        public static void LogTrace(string message)
+        public static ILogger LogTrace(string message)
         {
-            GlobalLogger?.LogTrace(message);
+            return GlobalLogger?.LogTrace(message);
         }
 
         /// <summary>
@@ -41,9 +41,9 @@
         /// </summary>
         /// <param name="format">The format.</param>
         /// <param name="args">The args.</param>
-        public static void LogTraceFormat(string format, params object[] args)
+        public static ILogger LogTraceFormat(string format, params object[] args)
         {
-            GlobalLogger?.LogTraceFormat(format, args);
+            return GlobalLogger?.LogTraceFormat(format, args);
         }
 
         /// <summary>
@@ -51,9 +51,9 @@
         /// </summary>
         /// <param name="format">The format.</param>
         /// <param name="args">The args.</param>
-        public static void LogInfo(string message)
+        public static ILogger LogInfo(string message)
         {
-            GlobalLogger?.LogInfo(message);
+            return GlobalLogger?.LogInfo(message);
         }
 
         /// <summary>
@@ -61,9 +61,9 @@
         /// </summary>
         /// <param name="format">The format.</param>
         /// <param name="args">The args.</param>
-        public static void LogInfoFormat(string format, params object[] args)
+        public static ILogger LogInfoFormat(string format, params object[] args)
         {
-            GlobalLogger?.LogInfoFormat(format, args);
+            return  GlobalLogger?.LogInfoFormat(format, args);
         }
 
         /// <summary>
@@ -71,9 +71,9 @@
         /// </summary>
         /// <param name="format">The format.</param>
         /// <param name="args">The args.</param>
-        public static void LogError(string message)
+        public static ILogger LogError(string message)
         {
-            GlobalLogger?.LogError(message);
+            return GlobalLogger?.LogError(message);
         }
 
         /// <summary>
@@ -81,9 +81,9 @@
         /// </summary>
         /// <param name="format">The format.</param>
         /// <param name="args">The args.</param>
-        public static void LogErrorFormat(string format, params object[] args)
+        public static ILogger LogErrorFormat(string format, params object[] args)
         {
-            GlobalLogger?.LogErrorFormat(format, args);
+            return GlobalLogger?.LogErrorFormat(format, args);
         }
     }
 }

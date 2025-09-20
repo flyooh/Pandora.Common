@@ -32,12 +32,14 @@ namespace Pandora.Logging
         /// Logs debug message.
         /// </summary>
         /// <param name="message">The format.</param>
-        public void LogDebug(string message)
+        public ILogger LogDebug(string message)
         {
             if (LogLevel >= LogLevel.Debug)
             {
                 _loggerImpl.Write(GetFullMessage(message));
             }
+
+            return this;
         }
 
         /// <summary>
@@ -45,12 +47,14 @@ namespace Pandora.Logging
         /// </summary>
         /// <param name="format">The format.</param>
         /// <param name="args">The args.</param>
-        public void LogDebugFormat(string format, params object[] args)
+        public ILogger LogDebugFormat(string format, params object[] args)
         {
             if (LogLevel >= LogLevel.Debug)
             {
                 _loggerImpl.Write(GetFullMessage(string.Format(format, args)));
             }
+
+            return this;
         }
 
         /// <summary>
@@ -58,12 +62,14 @@ namespace Pandora.Logging
         /// </summary>
         /// <param name="format">The format.</param>
         /// <param name="args">The args.</param>
-        public void LogTrace(string message)
+        public ILogger LogTrace(string message)
         {
             if (LogLevel >= LogLevel.Trace)
             {
                 _loggerImpl.Write(GetFullMessage(message));
             }
+
+            return this;
         }
 
         /// <summary>
@@ -71,12 +77,14 @@ namespace Pandora.Logging
         /// </summary>
         /// <param name="format">The format.</param>
         /// <param name="args">The args.</param>
-        public void LogTraceFormat(string format, params object[] args)
+        public ILogger LogTraceFormat(string format, params object[] args)
         {
             if (LogLevel >= LogLevel.Trace)
             {
                 _loggerImpl.Write(GetFullMessage(string.Format(format, args)));
             }
+
+            return this;
         }
 
         /// <summary>
@@ -84,12 +92,14 @@ namespace Pandora.Logging
         /// </summary>
         /// <param name="format">The format.</param>
         /// <param name="args">The args.</param>
-        public void LogInfo(string message)
+        public ILogger LogInfo(string message)
         {
             if (LogLevel >= LogLevel.Info)
             {
                 _loggerImpl.Write(GetFullMessage(message));
             }
+
+            return this;
         }
 
         /// <summary>
@@ -97,12 +107,14 @@ namespace Pandora.Logging
         /// </summary>
         /// <param name="format">The format.</param>
         /// <param name="args">The args.</param>
-        public void LogInfoFormat(string format, params object[] args)
+        public ILogger LogInfoFormat(string format, params object[] args)
         {
             if (LogLevel >= LogLevel.Info)
             {
                 _loggerImpl.Write(GetFullMessage(string.Format(format, args)));
             }
+
+            return this;
         }
 
         /// <summary>
@@ -110,12 +122,14 @@ namespace Pandora.Logging
         /// </summary>
         /// <param name="format">The format.</param>
         /// <param name="args">The args.</param>
-        public void LogError(string message)
+        public ILogger LogError(string message)
         {
             if (LogLevel >= LogLevel.Error)
             {
                 _loggerImpl.Write(GetFullMessage(message));
             }
+
+            return this;
         }
 
         /// <summary>
@@ -123,12 +137,14 @@ namespace Pandora.Logging
         /// </summary>
         /// <param name="format">The format.</param>
         /// <param name="args">The args.</param>
-        public void LogErrorFormat(string format, params object[] args)
+        public ILogger LogErrorFormat(string format, params object[] args)
         {
             if (LogLevel >= LogLevel.Error)
             {
                 _loggerImpl.Write(GetFullMessage(string.Format(format, args)));
             }
+
+            return this;
         }
 
         private string GetFullMessage(string message)
