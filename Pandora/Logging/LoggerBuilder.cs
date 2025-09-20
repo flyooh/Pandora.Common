@@ -6,7 +6,7 @@ namespace Pandora.Logging
     {
         private readonly CompositionLoggerImpl _composition;
 
-        private ILogTimeFormatter _timeFormatter = new DefaultLogTimeFormatter();
+        private ILogPrefixFormatter _prefixFormatter = DefaultLogPrefixFormatter.Instance;
 
         private LogLevel _logLevel = LogLevel.Debug;
 
@@ -21,15 +21,23 @@ namespace Pandora.Logging
             return this;
         }
 
-        public LoggerBuilder InstallTimeFormatter(ILogTimeFormatter timeFormatter)
+        public LoggerBuilder InstallTimeFormatter(ILogPrefixFormatter timeFormatter)
         { 
-            _timeFormatter = timeFormatter;
+            _prefixFormatter = timeFormatter;
             return this;
         }
 
         public LoggerBuilder InstallConsoleLogger()
         { 
             _composition.Add(new ConsolerLoggerImpl());
+            return this;
+        }
+
+        public LoggerBuilder InstallDefaultFileLogger(string logFileName)
+        { 
+            Ensure.ArgumentIsNotNullOrEmpty(logFileName, nameof(logFileName));
+            var logFileNameProvider = new DefaultLogFileNameProvider(logFileName);
+            _composition.Add(new FileLoggerImpl(logFileNameProvider));
             return this;
         }
 
@@ -49,12 +57,12 @@ namespace Pandora.Logging
 
         public ILogger Build()
         {
-            return new DynamicLogger(_composition, _timeFormatter, _logLevel);
+            return new DynamicLogger(_composition, _prefixFormatter, _logLevel);
         }
 
         public void BuildGlobal()
         {
-            Logger.GlobalLogger = new DynamicLogger(_composition, _timeFormatter, _logLevel);
+            Logger.GlobalLogger = new DynamicLogger(_composition, _prefixFormatter, _logLevel);
         }
     }
 }

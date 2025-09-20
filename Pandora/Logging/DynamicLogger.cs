@@ -9,17 +9,17 @@ namespace Pandora.Logging
     {
         private readonly ILoggerImpl _loggerImpl;
 
-        private readonly ILogTimeFormatter _timeFormatter;
+        private readonly ILogPrefixFormatter _prefixFormatter;
 
         private readonly LogLevel _logLevel;
 
-        public DynamicLogger(ILoggerImpl loggerImpl, ILogTimeFormatter timeFormatter, LogLevel logLevel)
+        public DynamicLogger(ILoggerImpl loggerImpl, ILogPrefixFormatter prefixFormatter, LogLevel logLevel)
         { 
             Ensure.ArgumentIsNotNull(loggerImpl, nameof(loggerImpl));
-            Ensure.ArgumentIsNotNull(timeFormatter, nameof(timeFormatter));
+            Ensure.ArgumentIsNotNull(prefixFormatter, nameof(prefixFormatter));
 
             _loggerImpl = loggerImpl;
-            _timeFormatter = timeFormatter;
+            _prefixFormatter = prefixFormatter;
             _logLevel = logLevel;
         }
 
@@ -133,7 +133,7 @@ namespace Pandora.Logging
 
         private string GetFullMessage(string message)
         {
-            return $"{_timeFormatter.FormatTime(LogLevel)}{message}";
+            return $"{_prefixFormatter.GetPrefix(LogLevel)}{message}";
         }
     }
 }
