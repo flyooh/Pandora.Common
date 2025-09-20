@@ -1,4 +1,5 @@
-﻿using Pandora.Logging;
+﻿using Pandora.Common;
+using Pandora.Logging;
 using System;
 
 namespace TestApp
@@ -11,9 +12,15 @@ namespace TestApp
                 .InstallConsoleLogger()
                 .InstallDefaultFileLogger("a.log")
                 .BuildGlobal();
-            Logger.LogDebug("Hello, World!");
-            Logger.LogInfo("This is a flower");
-            Logger.LogErrorFormat("It is not right time. {0}", DateTime.Now);
+
+
+            RetryExecutor.TryUntilSuccessOrMaxAttempts(10, TimeSpan.FromSeconds(1), () =>
+            {
+                Logger.LogDebug("Hello, World!");
+                Logger.LogInfo("This is a flower");
+                Logger.LogErrorFormat("It is not right time. {0}", DateTime.Now);
+                return false;
+            });
         }
     }
 }
