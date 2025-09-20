@@ -60,9 +60,10 @@ namespace Pandora.Logging
             return new DynamicLogger(_composition, _prefixFormatter, _logLevel);
         }
 
-        public void BuildGlobal()
+        public ILogger BuildGlobal()
         {
             Logger.GlobalLogger = new DynamicLogger(_composition, _prefixFormatter, _logLevel);
+            return Logger.GlobalLogger;
         }
     }
 }

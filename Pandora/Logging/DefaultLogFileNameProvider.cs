@@ -13,7 +13,7 @@ namespace Pandora.Logging
             _logFileName = Path.GetFullPath(logFileName);
 
             var logDir = Path.GetDirectoryName(_logFileName);
-            if (!Directory.Exists(_logFileName))
+            if (!Directory.Exists(logDir))
             {
                 Directory.CreateDirectory(logDir);
             }

@@ -4,6 +4,6 @@
     {
         ILogger Build();
 
-        void BuildGlobal();
+        ILogger BuildGlobal();
     }
 }

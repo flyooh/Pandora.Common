@@ -8,7 +8,7 @@ namespace TestApp
     {
         static void Main(string[] args)
         {
-            new LoggerBuilder()
+            var logger = new LoggerBuilder()
                 .InstallConsoleLogger()
                 .InstallDefaultFileLogger("a.log")
                 .BuildGlobal();
