@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
-    <TargetFrameworks>net6.0;net8.0;net481</TargetFrameworks>
+    <TargetFrameworks>net8.0</TargetFrameworks>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <Company>Pandora Solution</Company>
