@@ -3,6 +3,7 @@ using Pandora.Logging;
 using System;
 using System.Buffers;
 using System.Reflection.Metadata;
+using TestApp.Buffers;
 
 namespace TestApp
 {
@@ -24,8 +25,13 @@ namespace TestApp
             ////    return false;
             ////});
 
-            IMemoryOwner<byte> memoryOwner = NativeMemoryPool<byte>.Shared.Rent(1000);
-            memoryOwner.Dispose();
+            NativeMemoryPoolExample example = new NativeMemoryPoolExample();
+            example.ProcessLargeData();
+            example.ProcessLargeData();
+            example.ProcessLargeData();
+            example.ProcessLargeData();
+            example.ProcessWithSpan();
+            example.MonitorPoolUsage();
         }
     }
 }
