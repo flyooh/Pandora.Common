@@ -13,7 +13,7 @@ namespace TestApp.Buffers
         private readonly Memory<T> _memory;
         private bool _disposed;
         private readonly Action<NativeMemoryBuffer<T>> _returnCallback;
-        private bool _returned;
+        ////private bool _returned;
 
         public int Length => _length;
         public Memory<T> Memory => _disposed ? throw new ObjectDisposedException("NativeMemoryBuffer") : _memory;
@@ -47,10 +47,10 @@ namespace TestApp.Buffers
 
         public void Dispose()
         {
-            if (_returned) return;
+            ////if (_returned) return;
 
             _returnCallback(this);
-            _returned = true;
+            ////_returned = true;
         }
 
         ~NativeMemoryBuffer()
