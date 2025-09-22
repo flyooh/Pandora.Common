@@ -2,7 +2,7 @@
 using System.Buffers;
 using System.Runtime.CompilerServices;
 
-namespace TestApp.Buffers
+namespace TestApp.Buffers.Internal
 {
     // 自定义MemoryManager
     internal sealed unsafe class NativeMemoryManager<T> : MemoryManager<T> where T : unmanaged

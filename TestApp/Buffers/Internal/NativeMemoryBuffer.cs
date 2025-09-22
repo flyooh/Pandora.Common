@@ -3,7 +3,7 @@ using System.Buffers;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TestApp.Buffers
+namespace TestApp.Buffers.Internal
 {
     // 本地内存缓冲区
     internal unsafe sealed class NativeMemoryBuffer<T> : IMemoryOwner<T> where T : unmanaged

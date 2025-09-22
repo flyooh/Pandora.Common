@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestApp.Buffers
+namespace TestApp.Buffers.Tests
 {
     // 使用示例
     public class NativeMemoryPoolExample
@@ -77,7 +77,10 @@ namespace TestApp.Buffers
 
         private void ProcessData(Span<float> data)
         {
-            // 数据处理逻辑
+            foreach (var pair in data)
+            {
+                Console.WriteLine(pair);
+            }
         }
     }
 }

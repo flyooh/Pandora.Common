@@ -2,7 +2,7 @@
 using System.Buffers;
 using System.Collections.Generic;
 
-namespace TestApp.Buffers
+namespace TestApp.Buffers.Internal
 {
     // 内部桶类
     internal class NativeMemoryBucket<T> : IDisposable where T : unmanaged
@@ -33,7 +33,7 @@ namespace TestApp.Buffers
             }
 
             // 如果没有可用缓冲区，分配新的
-            return new NativeMemoryBuffer<T>(_size, this.Return);
+            return new NativeMemoryBuffer<T>(_size, Return);
         }
 
         public void Return(NativeMemoryBuffer<T> buffer)

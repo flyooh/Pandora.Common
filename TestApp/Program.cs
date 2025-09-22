@@ -3,7 +3,7 @@ using Pandora.Logging;
 using System;
 using System.Buffers;
 using System.Reflection.Metadata;
-using TestApp.Buffers;
+using TestApp.Buffers.Tests;
 
 namespace TestApp
 {
@@ -26,10 +26,10 @@ namespace TestApp
             ////});
 
             NativeMemoryPoolExample example = new NativeMemoryPoolExample();
-            example.ProcessLargeData();
-            example.ProcessLargeData();
-            example.ProcessLargeData();
-            example.ProcessLargeData();
+            //example.ProcessLargeData();
+            //example.ProcessLargeData();
+            //example.ProcessLargeData();
+            //example.ProcessLargeData();
             example.ProcessWithSpan();
             example.MonitorPoolUsage();
         }

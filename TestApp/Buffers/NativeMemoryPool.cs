@@ -2,6 +2,7 @@
 using System.Buffers;
 using System.Collections.Concurrent;
 using System.Runtime.CompilerServices;
+using TestApp.Buffers.Internal;
 
 namespace TestApp.Buffers
 {
