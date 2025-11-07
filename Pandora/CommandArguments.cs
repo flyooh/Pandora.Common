@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Pandora.Common
+﻿namespace Pandora.Common
 {
     /// <summary>
     /// Represents arguments of command line.

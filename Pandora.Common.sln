@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pandora.Common", "Pandora\P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{52D8AC6C-72F4-407F-8A93-CF67F6284956}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pandora.Logging", "Pandora.Logging\Pandora.Logging.csproj", "{54AD3A53-C86A-4C21-8E3A-2C01A6DF386D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{52D8AC6C-72F4-407F-8A93-CF67F6284956}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52D8AC6C-72F4-407F-8A93-CF67F6284956}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52D8AC6C-72F4-407F-8A93-CF67F6284956}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54AD3A53-C86A-4C21-8E3A-2C01A6DF386D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54AD3A53-C86A-4C21-8E3A-2C01A6DF386D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54AD3A53-C86A-4C21-8E3A-2C01A6DF386D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54AD3A53-C86A-4C21-8E3A-2C01A6DF386D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

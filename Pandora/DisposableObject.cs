@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Pandora.Common
+﻿namespace Pandora.Common
 {
     /// <summary>
     /// Respresents an object which implements interface IDisposable.
