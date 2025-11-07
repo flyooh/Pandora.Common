@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Pandora.Logging
+﻿namespace Pandora.Logging
 {
     public interface ILogPrefixFormatter
     {

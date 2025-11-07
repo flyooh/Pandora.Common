@@ -1,6 +1,4 @@
-﻿using Pandora.Common;
-
-namespace Pandora.Logging
+﻿namespace Pandora.Logging
 {
     public class LoggerBuilder : ILoggerBuilder
     {
@@ -21,9 +19,9 @@ namespace Pandora.Logging
             return this;
         }
 
-        public LoggerBuilder InstallTimeFormatter(ILogPrefixFormatter timeFormatter)
+        public LoggerBuilder InstallPrefixFormatter(ILogPrefixFormatter formatter)
         { 
-            _prefixFormatter = timeFormatter;
+            _prefixFormatter = formatter;
             return this;
         }
 

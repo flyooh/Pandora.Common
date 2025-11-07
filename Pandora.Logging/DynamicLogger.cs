@@ -1,6 +1,4 @@
-﻿using Pandora.Common;
-
-namespace Pandora.Logging
+﻿namespace Pandora.Logging
 {
     /// <summary>
     /// Class used to log message.
@@ -149,7 +147,14 @@ namespace Pandora.Logging
 
         private string GetFullMessage(string message)
         {
-            return $"{_prefixFormatter.GetPrefix(LogLevel)}{message}";
+            if (_prefixFormatter == null)
+            {
+                return message;
+            }
+            else
+            {
+                return $"{_prefixFormatter.GetPrefix(LogLevel)}{message}";
+            }
         }
     }
 }

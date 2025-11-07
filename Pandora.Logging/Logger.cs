@@ -23,7 +23,7 @@
         /// <param name="args">The args.</param>
         public static ILogger LogDebugFormat(string format, params object[] args)
         {
-            return GlobalLogger.LogDebugFormat(format, args);
+            return GlobalLogger?.LogDebugFormat(format, args);
         }
 
         /// <summary>

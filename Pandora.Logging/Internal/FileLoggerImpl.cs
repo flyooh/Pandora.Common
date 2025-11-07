@@ -1,7 +1,4 @@
-﻿using Pandora.Common;
-using System.IO;
-
-namespace Pandora.Logging
+﻿namespace Pandora.Logging
 {
     /// <summary>
     /// Class of FileLogWriter.
