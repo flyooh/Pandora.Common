@@ -11,3 +11,5 @@
 /Pandora.Logging/bin
 /Pandora.Common/bin
 /Pandora.Common/obj
+/Pandora.Buffering/bin/x64
+/Pandora.Buffering/obj
