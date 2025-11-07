@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Pandora\Pandora.Common.csproj" />
+    <ProjectReference Include="..\Pandora.Common\Pandora.Common.csproj" />
   </ItemGroup>
 
 </Project>
